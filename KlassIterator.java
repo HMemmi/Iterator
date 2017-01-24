@@ -7,6 +7,7 @@ package iterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  *
@@ -14,36 +15,38 @@ import java.util.Iterator;
  */
 public class KlassIterator implements Iterator<Person> {
 
-    int n;
-    private int position;
-    private ArrayList<Person> klass;
+    private static int position;
+    private final ArrayList<Person> klass;
     public KlassIterator(ArrayList<Person> klass) {
         this.klass=klass;
+        this.position=0;
     }
 
+      @Override
+    public Person next() {
+         if(hasNext()) {  
+            return klass.get(position++);
+               
+        } else {
+            throw new NoSuchElementException("There are no elements size = " + klass.size());
+        }
+       
+    }
+    
     @Override
     public boolean hasNext() {
-        klass=new ArrayList<Person>();
+        
         return position<klass.size();
     }
 
     @Override
-    public Person next() {
-        
-        Person p=klass.get(position);
-         n= position++;
-       System.out.println(n);
-
-
-       return p;          
-    }
-
- 
-    @Override
      public void remove(){
            
-        klass.remove(n);
+      klass.remove(--position);
         
     }
     
+  
+
+ 
 }

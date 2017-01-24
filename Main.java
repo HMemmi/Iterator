@@ -34,15 +34,16 @@ public class Main {
        
        StringBuilder person=new StringBuilder();
              
-       person.append("Ronaldo");
+       person.append("Messi");
        String s=person.toString();
-KlassIterator it=(KlassIterator) k.iterator();
-             
+        KlassIterator it= (KlassIterator)k.iterator();
+          
      for(Person p:k) {
-           
-    
-            if(s.equals(p.getName()))
-                   it.remove();      
+
+            if(s.equals(p.getName())) {
+                it.remove();  
+            }
+        
        }
      
      
@@ -51,26 +52,10 @@ KlassIterator it=(KlassIterator) k.iterator();
             System.out.println(p.getName()); 
           
        }
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
       /* Course c=new Course("h","b","n");
        c.add(p4);*/
- 
-       
-       
-       
-              
-       
+
         /*for(Person p:c)
        {
        System.out.println(p.getName());

@@ -50,4 +50,5 @@ public class Person {
     {
     return "id:"+getId()+" eftername: "+getEftername()+" name: "+getName();
     }
+
 }

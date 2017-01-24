@@ -49,6 +49,11 @@ public class Klass implements Iterable<Person>{
         return new KlassIterator(klass);
     }
 
+  /* void remove(int n) {
+        klass.remove(n);
+    }*/
+
+
   
  
 }
